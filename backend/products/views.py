@@ -11,7 +11,7 @@ from .serializers import ProductSerializer
 
 @api_view(['GET'])
 def search_products(request,search_term):
-    #query = request.GET.get('search', '')
+    
     products = Product.objects.filter(name__icontains = search_term)
 
     if not products.exists():
